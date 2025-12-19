@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'livros/home.css' %}" />
+    <title>editcatalogo</title>
+  </head>
+  <body>
+    <nav>
+      <a href="{% url 'home' %}" class="botao">Voltar ao Catalogo</a>
+      <a href="{% url 'editCatalogo' %}" class="botao">Add Livro</a>
+    </nav>
+    <div class="listagem">
+      <h1>Lista de Livros</h1>
+      <table>
+        <tr>
+          <th>Titulo</th>
+          <th>Autor</th>
+          <th>Editora</th>
+          <th>Lançamento</th>
+        </tr>
+        {% for Livro in Livros %}
+        <tr class="edittr">
+          <td>{{Livro.titulo}}</td>
+          <td>{{Livro.autor}}</td>
+          <td>{{Livro.editora}}</td>
+          <td>{{Livro.lancamento}}</td>
+          <td><button>Editar</button></td>
+          <td><button>Excluir</button></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>

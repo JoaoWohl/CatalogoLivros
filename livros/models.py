@@ -28,8 +28,9 @@ class Editora(models.Model):
 class Livro(models.Model):
     titulo = models.CharField(max_length=128)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
-    editora = models.ForeignKey(Editora, on_delete=models.CASCADE, default="")
+    editora = models.ForeignKey(Editora, on_delete=models.CASCADE)
     lancamento = models.DateField(default=date.today)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.titulo

@@ -4,7 +4,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'livros/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'livros/all.css' %}" />
+    <link rel="stylesheet" href="{% static 'livros/nav.css' %}" />
+    <link rel="stylesheet" href="{% static 'livros/listagem.css' %}" />
     <title>Home</title>
   </head>
   <body>
@@ -12,12 +14,13 @@
       <a href="{% url 'editCatalogo' %}" class="botao">Editar Catalogo</a>
     </nav>
     <div class="listagem">
-      <h1>Lista de Livros</h1>
+      <h1>Catalogo de Livros</h1>
       <table>
         <tr>
           <th>Titulo</th>
           <th>Autor</th>
           <th>Editora</th>
+          <th>Categoria</th>
           <th>Lançamento</th>
         </tr>
         {% for Livro in Livros %}
@@ -25,6 +28,7 @@
           <td>{{Livro.titulo}}</td>
           <td>{{Livro.autor}}</td>
           <td>{{Livro.editora}}</td>
+          <td>{{Livro.categoria}}</td>
           <td>{{Livro.lancamento}}</td>
         </tr>
         {% endfor %}

@@ -1,0 +1,39 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form h1 {
+  font-size: 8vh;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.form form div label {
+  display: inline-block;
+  font-family: "Courier New", Courier, monospace;
+  width: 8vw;
+  text-align: right;
+}
+
+.form form div input {
+  border: 1px solid #b16831;
+  border-radius: 10px;
+  width: 11.62vw;
+  height: 4vh;
+}
+
+.form form div select {
+  border: 1px solid #b16831;
+  border-radius: 10px;
+  width: 12vw;
+  height: 4.7vh;
+}

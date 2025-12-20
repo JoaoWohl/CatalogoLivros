@@ -4,24 +4,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AddLivro</title>
+    <title>AddAutor</title>
     <link rel="stylesheet" href="{% static 'livros/all.css' %}" />
     <link rel="stylesheet" href="{% static 'livros/nav.css' %}" />
     <link rel="stylesheet" href="{% static 'livros/form.css' %}" />
+    <link rel="stylesheet" href="{% static 'livros/otherTables.css' %}" />
   </head>
   <body>
     <nav>
       <a href="{% url 'home' %}" class="botao">Voltar ao Catalogo</a>
       <a href="{% url 'editCatalogo' %}" class="botao">Voltar ao Editor</a>
+      <a href="{% url 'addLivro' %}" class="botao">Add Livro</a>
       <a href="{% url 'addAutor' %}" class="botao">Autores</a>
       <a href="{% url 'addEditora' %}" class="botao">Editoras</a>
-      <a href="{% url 'addCategoria' %}" class="botao">Categorias</a>
     </nav>
     <div class="form">
-      <h1>Adcione um livro aqui</h1>
-      <form action="" method="post">
-        {% csrf_token %} {{form}}<button type="submit">Salvar</button>
+      <h1 style="font-size: 5vh">Adicione um Autor</h1>
+      <form method="post">
+        {% csrf_token %}{{ form }}<button type="submit">Adicionar</button>
       </form>
+    </div>
+
+    <div class="lista">
+      <table>
+        <tr>
+          <th>Nomes</th>
+        </tr>
+
+        {% for Categoria in categorias %}
+        <tr>
+          <td>{{Categoria.nome}}</td>
+          <td>
+            <button>
+              <a href="{% url 'deleteCategoria' Categoria.id %}">Excluir</a>
+            </button>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
     </div>
   </body>
 </html>

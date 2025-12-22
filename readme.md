@@ -41,8 +41,8 @@ O versionamento do projeto foi realizado com Git, garantindo controle e históri
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seuusuario/nome-do-repositorio.git
-cd nome-do-repositorio
+git clone https://github.com/JoaoWohl/CatalogoLivros.git
+cd CatalogoLivros
 ```
 
 2. Crie e ative o ambiente virtual:
